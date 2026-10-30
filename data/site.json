@@ -1,0 +1,750 @@
+{
+  "AdSphere": {
+    "theme": {
+      "colors": {
+        "brand": "#6e0c12",
+        "brand-dark": "#520a0e",
+        "brand-light": "#f4a9ab",
+        "accent": "#d60c14",
+        "ink": "#141414",
+        "night": "#0c0c0c",
+        "panel": "#222222",
+        "body": "#3f3f3f",
+        "slate": "#5a5a5a",
+        "subtle": "#7a7a7a",
+        "page": "#ffffff",
+        "cloud": "#f7f5f5",
+        "blush": "#fbf1f1",
+        "line": "#ebe4e4",
+        "field": "#fbfafa",
+        "backdrop": "#f5f5f5"
+      },
+      "fonts": {
+        "display": {
+          "family": "Red Hat Display",
+          "fallback": "Arial, sans-serif",
+          "weights": [
+            500,
+            600,
+            700,
+            800,
+            900
+          ],
+          "italic": false
+        },
+        "text": {
+          "family": "Red Hat Text",
+          "fallback": "Arial, sans-serif",
+          "weights": [
+            400,
+            500
+          ],
+          "italic": false
+        }
+      }
+    },
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Header": "AdSphereHeader1",
+          "EnquiryForm": "AdSphereEnquiryForm1",
+          "Footer": "AdSphereFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Hero",
+                "component": "AdSphereHero1"
+              },
+              {
+                "key": "About",
+                "component": "AdSphereAbout1"
+              },
+              {
+                "key": "WhyChoose",
+                "component": "AdSphereWhyChoose1"
+              },
+              {
+                "key": "Services",
+                "component": "AdSphereServices1"
+              },
+              {
+                "key": "Portfolio",
+                "component": "AdSpherePortfolio1"
+              },
+              {
+                "key": "Cta",
+                "component": "AdSphereCta1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "AdSphereTestimonials1"
+              },
+              {
+                "key": "Faq",
+                "component": "AdSphereFaq1"
+              },
+              {
+                "key": "Contact",
+                "component": "AdSphereContact1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Header": {
+        "variants": {
+          "AdSphereHeader1": {
+            "brand": {
+              "name": "AdSphere",
+              "logo": {
+                "src": "/images/logo.webp",
+                "alt": "AdSphere Advertising Agency",
+                "width": 900,
+                "height": 217
+              }
+            },
+            "seo": {
+              "title": "AdSphere - Advertising Agency | Turning Ideas into Impact",
+              "description": "AdSphere helps brands grow through strategic advertising, creative storytelling, and digital solutions that deliver real results."
+            },
+            "navigation": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Services",
+                "href": "#services"
+              },
+              {
+                "label": "Portfolio",
+                "href": "#portfolio"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "FAQs",
+                "href": "#faqs"
+              },
+              {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            ],
+            "cta": {
+              "label": "Get a Quote",
+              "href": "#contact"
+            },
+            "labels": {
+              "mainNav": "Main navigation",
+              "mobileNav": "Mobile navigation",
+              "openMenu": "Open menu",
+              "closeMenu": "Close menu",
+              "home": "AdSphere - back to top"
+            }
+          }
+        }
+      },
+      "Hero": {
+        "variants": {
+          "AdSphereHero1": {
+            "headingLines": [
+              {
+                "text": "Turning",
+                "indent": false
+              },
+              {
+                "text": "Ideas into",
+                "indent": false
+              },
+              {
+                "text": "Impact",
+                "indent": true
+              }
+            ],
+            "description": "We are a digital agency that creates immersive and engaging user experiences that turn ideas into impact.",
+            "button": {
+              "label": "Get Started Today",
+              "href": "#contact"
+            },
+            "image": {
+              "src": "/images/hero-office.webp",
+              "alt": "Modern AdSphere office with a long meeting table and wall displays"
+            }
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "AdSphereAbout1": {
+            "tagline": [
+              "Grow",
+              "Engage",
+              "Convert"
+            ],
+            "title": [
+              {
+                "text": "Leads marketing",
+                "highlight": true
+              },
+              {
+                "text": " efforts ",
+                "highlight": false
+              },
+              {
+                "text": "to promote the brand ",
+                "highlight": false
+              },
+              {
+                "text": "and drive business ",
+                "highlight": false
+              },
+              {
+                "text": "growth.",
+                "highlight": false
+              }
+            ],
+            "description": "We create data-driven marketing strategies that build brand awareness, attract the right audience, and deliver measurable growth.",
+            "paragraphs": [
+              "At AdSphere, we believe every brand has a unique story and the right audience deserves to hear it. We are a results-driven advertising agency focused on creating impactful marketing strategies that connect businesses with their audience across digital platforms.",
+              "From strategy and creative development to media planning and performance optimization, our team works closely with you to deliver tailored solutions that drive real growth, increase brand visibility, and generate measurable results."
+            ],
+            "images": {
+              "primary": {
+                "src": "/images/process-discover.webp",
+                "alt": "Consultant and client reviewing a campaign report"
+              }
+            },
+            "stats": [
+              {
+                "value": "10+",
+                "label": "Years of Experience"
+              },
+              {
+                "value": "30k+",
+                "label": "Successful Campaigns"
+              },
+              {
+                "value": "20k+",
+                "label": "Happy Clients"
+              },
+              {
+                "value": "98%",
+                "label": "Client Satisfaction"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChoose": {
+        "variants": {
+          "AdSphereWhyChoose1": {
+            "label": "Why Choose Us",
+            "title": [
+              {
+                "text": "Partner for Ideas ",
+                "highlight": false
+              },
+              {
+                "text": "That Drive ",
+                "highlight": false
+              },
+              {
+                "text": "Real Results",
+                "highlight": true
+              }
+            ],
+            "description": "We combine strategy, creativity and data to create advertising solutions that help your brand grow, stand out and connect with the right audience.",
+            "items": [
+              {
+                "title": "Strategic Approach",
+                "text": "Data-driven strategies tailored to your business goals for maximum impact.",
+                "icon": "chart",
+                "featured": false
+              },
+              {
+                "title": "Creative Excellence",
+                "text": "Engaging and innovative campaigns that make your brand stand out.",
+                "icon": "bulb",
+                "featured": true
+              },
+              {
+                "title": "Measurable Results",
+                "text": "Performance-focused advertising that drives real growth and higher ROI.",
+                "icon": "target",
+                "featured": false
+              },
+              {
+                "title": "Expert Team",
+                "text": "A dedicated team of marketing professionals with industry expertise.",
+                "icon": "team",
+                "featured": false
+              },
+              {
+                "title": "End-to-End Solutions",
+                "text": "From strategy and design to execution and optimization, we handle it all.",
+                "icon": "gear",
+                "featured": false
+              },
+              {
+                "title": "Long-Term Partnership",
+                "text": "We believe in building strong relationships and growing together with your brand.",
+                "icon": "handshake",
+                "featured": false
+              }
+            ]
+          }
+        }
+      },
+      "Services": {
+        "variants": {
+          "AdSphereServices1": {
+            "label": "Our Services",
+            "title": [
+              {
+                "text": "Services Designed ",
+                "highlight": false
+              },
+              {
+                "text": "For Your Business",
+                "highlight": true
+              }
+            ],
+            "description": "We offer a wide range of digital marketing services to help you build your brand, attract the right audience, and achieve measurable results.",
+            "cardButton": "Get a Quote",
+            "cards": [
+              {
+                "category": "Paid Media",
+                "title": "Digital Advertising",
+                "image": "/images/service-seo.webp"
+              },
+              {
+                "category": "Social Media",
+                "title": "Social Media Marketing",
+                "image": "/images/portfolio-social-campaign.webp"
+              },
+              {
+                "category": "Branding",
+                "title": "Brand Strategy",
+                "image": "/images/service-branding.webp"
+              },
+              {
+                "category": "Paid Advertising",
+                "title": "Performance Marketing",
+                "image": "/images/service-performance.webp"
+              },
+              {
+                "category": "Design",
+                "title": "Creative Design",
+                "image": "/images/about-designer.webp"
+              },
+              {
+                "category": "Consulting",
+                "title": "Consulting",
+                "image": "/images/service-consulting.webp"
+              },
+              {
+                "category": "Planning",
+                "title": "Media Planning",
+                "image": "/images/blog-data-driven.webp"
+              },
+              {
+                "category": "Campaigns",
+                "title": "Campaign Management",
+                "image": "/images/about-team.webp"
+              }
+            ]
+          }
+        }
+      },
+      "Portfolio": {
+        "variants": {
+          "AdSpherePortfolio1": {
+            "label": "Our Portfolio",
+            "title": [
+              {
+                "text": "Work That ",
+                "highlight": false
+              },
+              {
+                "text": "Creates Impact",
+                "highlight": true
+              }
+            ],
+            "description": "Explore some of our recent projects that showcase our creativity, strategy, and commitment to delivering real results for our clients.",
+            "projects": [
+              {
+                "title": "Brand Identity Design",
+                "tags": [
+                  "Branding",
+                  "Design"
+                ],
+                "image": "/images/portfolio-brand-identity.webp",
+                "alt": "Red and white AdSphere notebooks and business cards"
+              },
+              {
+                "title": "Marketing Website",
+                "tags": [
+                  "Development",
+                  "Marketing"
+                ],
+                "image": "/images/portfolio-marketing-website.webp",
+                "alt": "AdSphere marketing website shown on a laptop"
+              },
+              {
+                "title": "Business Mobile App",
+                "tags": [
+                  "Development",
+                  "Design"
+                ],
+                "image": "/images/portfolio-mobile-app.webp",
+                "alt": "AdSphere mobile app with growth chart on a phone"
+              },
+              {
+                "title": "Social Media Campaign",
+                "tags": [
+                  "Marketing",
+                  "Design"
+                ],
+                "image": "/images/portfolio-social-campaign.webp",
+                "alt": "Three phones showing AdSphere social media creatives"
+              },
+              {
+                "title": "Product Branding",
+                "tags": [
+                  "Branding",
+                  "Design"
+                ],
+                "image": "/images/portfolio-product-branding.webp",
+                "alt": "Black and red AdSphere product box"
+              },
+              {
+                "title": "Trading Platform",
+                "tags": [
+                  "Development",
+                  "Marketing"
+                ],
+                "image": "/images/portfolio-trading-platform.webp",
+                "alt": "Performance dashboard on a laptop screen"
+              }
+            ],
+            "openLabel": "View {title}",
+            "viewerLabel": "Project viewer",
+            "closeLabel": "Close",
+            "previousLabel": "Previous project",
+            "nextLabel": "Next project"
+          }
+        }
+      },
+      "Cta": {
+        "variants": {
+          "AdSphereCta1": {
+            "label": "Ready to grow?",
+            "titleTop": "Let’s Create Something Great",
+            "titleAccent": "Together",
+            "description": "Partner with AdSphere and take your brand to the next level with result-driven advertising solutions.",
+            "button": {
+              "label": "Get Started Today",
+              "href": "#contact"
+            }
+          }
+        }
+      },
+      "Testimonials": {
+        "variants": {
+          "AdSphereTestimonials1": {
+            "label": "Testimonials",
+            "title": [
+              {
+                "text": "Real Feedback from ",
+                "highlight": false
+              },
+              {
+                "text": "Real Clients",
+                "highlight": true
+              }
+            ],
+            "description": "Here’s what our clients say about working with us and the results we’ve delivered for their businesses.",
+            "badge": {
+              "stars": 5,
+              "text": "Trusted by 500+ Businesses"
+            },
+            "ratingLabel": "5 out of 5 stars",
+            "items": [
+              {
+                "quote": "Working with this team has been a game changer for our brand. Their strategy, creativity, and dedication helped us reach the right audience and achieve real, measurable growth. Highly recommended!",
+                "name": "Michael Roberts",
+                "role": "CEO & Founder, Nexus Tech",
+                "image": "/images/testimonial-client.webp",
+                "alt": "Michael Roberts talking during a meeting"
+              },
+              {
+                "quote": "AdSphere understood our goals from day one. The campaigns they planned were sharp, on brand, and delivered far more qualified leads than we expected in such a short time.",
+                "name": "Priya Sharma",
+                "role": "Marketing Head, UrbanNest",
+                "image": "/images/process-execute.webp",
+                "alt": "Priya Sharma at work"
+              },
+              {
+                "quote": "From brand identity to performance marketing, every step was handled with clarity and care. Our online visibility and sales have grown steadily ever since we started.",
+                "name": "Daniel Carter",
+                "role": "Director, BrightPath Retail",
+                "image": "/images/process-deliver.webp",
+                "alt": "Daniel Carter at his desk"
+              },
+              {
+                "quote": "A reliable partner that communicates clearly and delivers on time. Their data-driven approach helped us spend smarter and see real returns on every campaign.",
+                "name": "Ananya Verma",
+                "role": "Co-Founder, FreshKart",
+                "image": "/images/testimonial-ananya.webp",
+                "alt": "Ananya Verma smiling at work"
+              }
+            ],
+            "showLabel": "Show the quote from {name}",
+            "previousLabel": "Previous",
+            "nextLabel": "Next"
+          }
+        }
+      },
+      "Faq": {
+        "variants": {
+          "AdSphereFaq1": {
+            "label": "FAQs",
+            "title": [
+              {
+                "text": "Frequently Asked ",
+                "highlight": false
+              },
+              {
+                "text": "Questions",
+                "highlight": true
+              }
+            ],
+            "description": "Quick answers to the questions we hear most often. If you cannot find what you are looking for, our team is happy to help.",
+            "items": [
+              {
+                "question": "What services does AdSphere offer?",
+                "answer": "We offer digital advertising, social media marketing, brand strategy, performance marketing, creative design, consulting, media planning and campaign management."
+              },
+              {
+                "question": "How do I get started with a project?",
+                "answer": "Fill in the Get a Quote form or contact us directly. We will set up a short call to understand your goals and then share a plan with timeline and pricing."
+              },
+              {
+                "question": "How much do your services cost?",
+                "answer": "Pricing depends on the scope, channels and duration of your project. After understanding your requirements we share a clear, customized quote with no hidden charges."
+              },
+              {
+                "question": "How long does it take to see results?",
+                "answer": "Paid campaigns can show early results within a few weeks, while SEO and brand building usually take a few months. We set realistic expectations before we begin."
+              },
+              {
+                "question": "Do you work with small businesses and startups?",
+                "answer": "Yes. We work with businesses of every size and shape the strategy and budget to match your stage of growth."
+              },
+              {
+                "question": "How will I know how my campaigns are performing?",
+                "answer": "You receive regular reports with the numbers that matter, along with clear insights and the next steps we recommend."
+              },
+              {
+                "question": "Can I change the plan after the project starts?",
+                "answer": "Yes. Marketing needs change, so we review the plan with you regularly and adjust channels, budgets or creatives when needed."
+              },
+              {
+                "question": "Is there a long-term contract?",
+                "answer": "We offer both project-based and ongoing engagements. The terms are agreed with you before the work begins."
+              }
+            ],
+            "help": {
+              "title": "Still have questions?",
+              "text": "Our team is here to help you with anything you need to know.",
+              "button": {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            }
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "AdSphereContact1": {
+            "label": "Contact Us",
+            "title": [
+              {
+                "text": "Have Any Project on ",
+                "highlight": false
+              },
+              {
+                "text": "Your Mind?",
+                "highlight": true
+              }
+            ],
+            "description": "We’d love to hear about your project. Share your requirements and our team will get back to you with a personalized solution.",
+            "info": [
+              {
+                "icon": "map-pin",
+                "title": "Headquarters",
+                "lines": [
+                  "123 Business Avenue, Suite 400, San Francisco, CA 94107, USA"
+                ],
+                "href": "https://www.google.com/maps/search/?api=1&query=123+Business+Avenue+San+Francisco+CA+94107"
+              },
+              {
+                "icon": "mail",
+                "title": "Email Address",
+                "lines": [
+                  "info@xyz.com",
+                  "support@xyz.com"
+                ],
+                "href": "mailto:info@xyz.com"
+              },
+              {
+                "icon": "phone",
+                "title": "Phone Number",
+                "lines": [
+                  "+1 0000000000"
+                ],
+                "href": "tel:+10000000000"
+              },
+              {
+                "icon": "clock",
+                "title": "Working Hours",
+                "lines": [
+                  "Mon - Fri: 9:00 AM - 6:00 PM",
+                  "Sat - Sun: Closed"
+                ],
+                "href": ""
+              }
+            ],
+            "form": {
+              "label": "Get a Quote",
+              "title": "Request a Quote",
+              "description": "Fill out the form below and we’ll get back to you with a customized quote."
+            }
+          }
+        }
+      },
+      "EnquiryForm": {
+        "variants": {
+          "AdSphereEnquiryForm1": {
+            "fields": {
+              "name": "Full Name*",
+              "email": "Email Address*",
+              "phone": "Phone Number*",
+              "company": "Company Name",
+              "service": "Service / Project Type*",
+              "budget": "Estimated Budget",
+              "timeline": "Expected Timeline",
+              "details": "Project Details*"
+            },
+            "serviceOptions": [
+              "Digital Advertising",
+              "Social Media Marketing",
+              "Brand Strategy",
+              "Performance Marketing",
+              "Creative Design",
+              "Consulting",
+              "Media Planning",
+              "Campaign Management"
+            ],
+            "budgetOptions": [
+              "Under ₹50,000",
+              "₹50,000 - ₹2,00,000",
+              "₹2,00,000 - ₹5,00,000",
+              "Above ₹5,00,000"
+            ],
+            "timelineOptions": [
+              "Within 2 weeks",
+              "Within 1 month",
+              "1 - 3 months",
+              "More than 3 months"
+            ],
+            "button": "Submit Request",
+            "sending": "Sending...",
+            "successTitle": "Thank you, {name}!",
+            "success": "Your request has been noted. Our team will get back to you shortly.",
+            "closeLabel": "Close"
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "AdSphereFooter1": {
+            "logo": {
+              "src": "/images/logo-light.webp",
+              "width": 900,
+              "height": 217
+            },
+            "tagline": "We help brands grow through strategic advertising, creative storytelling, and digital solutions that deliver real results.",
+            "socials": [
+              {
+                "platform": "facebook",
+                "label": "Facebook",
+                "href": "https://www.facebook.com/"
+              },
+              {
+                "platform": "instagram",
+                "label": "Instagram",
+                "href": "https://www.instagram.com/"
+              },
+              {
+                "platform": "linkedin",
+                "label": "LinkedIn",
+                "href": "https://www.linkedin.com/"
+              },
+              {
+                "platform": "youtube",
+                "label": "YouTube",
+                "href": "https://www.youtube.com/"
+              }
+            ],
+            "quickLinksTitle": "Quick Links",
+            "quickLinks": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Services",
+                "href": "#services"
+              },
+              {
+                "label": "Portfolio",
+                "href": "#portfolio"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "FAQs",
+                "href": "#faqs"
+              },
+              {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            ],
+            "contactTitle": "Contact Us",
+            "copyright": "© {year} All Rights Reserved. Powered by Lestow."
+          }
+        }
+      }
+    }
+  }
+}

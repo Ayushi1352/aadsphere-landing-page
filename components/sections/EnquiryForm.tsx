@@ -1,18 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { site, type AdSphereEnquiryFormData, type SectionProps } from "@/data";
-import { useDummySubmit } from "@/components/useDummySubmit";
-import Icon from "@/components/Icon";
-import FormSuccess, { Spinner } from "@/components/FormSuccess";
+import type { EnquiryFormData } from "@/types/templates.types";
+import { useDummySubmit } from "@/components/ui/useDummySubmit";
+import { Icon } from "@/components/ui/Icon";
+import { FormSuccess, Spinner } from "@/components/ui/FormSuccess";
 
 /** Soft form fields */
 const base =
-  "w-full min-w-0 appearance-none rounded-xl border border-line bg-page px-3.5 text-sm text-ink outline-none transition-colors placeholder:text-subtle focus:border-brand max-sm:px-3 max-sm:placeholder:text-xs";
+  "w-full min-w-0 appearance-none rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-main)] px-3.5 text-sm text-[var(--color-heading)] outline-none transition-colors placeholder:text-[var(--color-text-placeholder)] focus:border-[var(--color-primary)] max-sm:px-3 max-sm:placeholder:text-xs";
 /** single-line fields and selects share one height */
 const field = `${base} h-11`;
 
-function SelectField({ name, placeholder, options, required, className = "" }: { name: string; placeholder: string; options: string[]; required?: boolean; className?: string }) {
+type SelectFieldProps = { name: string; placeholder: string; options: string[]; required?: boolean; className?: string };
+
+const SelectField = ({ name, placeholder, options, required, className = "" }: SelectFieldProps) => {
   const [value, setValue] = useState("");
 
   return (
@@ -24,25 +26,26 @@ function SelectField({ name, placeholder, options, required, className = "" }: {
         onChange={(event) => setValue(event.target.value)}
         aria-label={placeholder}
         // shows the placeholder grey until an option is picked
-        className={`${field} cursor-pointer pr-8 max-sm:text-xs ${value === "" ? "text-subtle" : "text-ink"}`}
+        className={`${field} cursor-pointer pr-8 max-sm:text-xs ${value === "" ? "text-[var(--color-text-placeholder)]" : "text-[var(--color-heading)]"}`}
       >
         <option value="" disabled>
           {placeholder}
         </option>
         {options.map((option) => (
-          <option key={option} value={option} className="text-ink">
+          <option key={option} value={option} className="text-[var(--color-heading)]">
             {option}
           </option>
         ))}
       </select>
-      <Icon name="chevron-down" className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-brand" />
+      <Icon name="FiChevronDown" className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-[var(--color-primary)]" />
     </div>
   );
-}
+};
 
 /** The quote request form in the contact section */
-export default function EnquiryForm({ data: form = site.enquiryFormSection }: SectionProps<AdSphereEnquiryFormData>) {
+export const EnquiryForm = ({ data: form }: { data?: EnquiryFormData }) => {
   const submit = useDummySubmit();
+  if (!form) return null;
   const { fields } = form;
 
   return (
@@ -74,7 +77,7 @@ export default function EnquiryForm({ data: form = site.enquiryFormSection }: Se
         <button
           type="submit"
           disabled={submit.sending}
-          className="col-span-2 flex h-12 items-center justify-center gap-3 rounded-lg border border-brand bg-brand font-display font-bold text-white transition-colors hover:bg-white hover:text-brand disabled:cursor-wait disabled:opacity-80 disabled:hover:bg-brand disabled:hover:text-white"
+          className="col-span-2 flex h-12 items-center justify-center gap-3 rounded-lg border border-[var(--color-primary)] bg-[var(--color-primary)] font-display font-bold text-[var(--color-white)] transition-colors hover:bg-[var(--color-white)] hover:text-[var(--color-primary)] disabled:cursor-wait disabled:opacity-80 disabled:hover:bg-[var(--color-primary)] disabled:hover:text-[var(--color-white)]"
         >
           {submit.sending ? (
             <>
@@ -82,9 +85,7 @@ export default function EnquiryForm({ data: form = site.enquiryFormSection }: Se
               {form.sending}
             </>
           ) : (
-            <>
-              {form.button}
-            </>
+            form.button
           )}
         </button>
       </form>
@@ -102,4 +103,4 @@ export default function EnquiryForm({ data: form = site.enquiryFormSection }: Se
       )}
     </>
   );
-}
+};

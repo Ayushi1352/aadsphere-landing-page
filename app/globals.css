@@ -1,31 +1,63 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Brand colours, taken from the AdSphere logo and website. These are only defaults: site.json (theme.colors) overrides them in app/layout.tsx. */
-  --color-brand: #6e0c12; /* logo maroon + buttons */
-  --color-brand-dark: #520a0e; /* hover state */
-  --color-brand-light: #f4a9ab; /* highlighted words on dark sections */
-  --color-accent: #d60c14; /* logo red, small accents */
-  --color-ink: #141414; /* headings, dark sections */
-  --color-night: #0c0c0c; /* footer */
-  --color-panel: #222222; /* cards on dark sections */
-  --color-body: #3f3f3f;
-  --color-slate: #5a5a5a;
-  --color-subtle: #7a7a7a;
-
-  /* Warm neutrals (maroon-tinted) */
-  --color-page: #ffffff;
-  --color-cloud: #f7f5f5;
-  --color-blush: #fbf1f1;
-  --color-line: #ebe4e4;
-  --color-field: #fbfafa;
-  /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
-  --color-backdrop: #f5f5f5;
-
+html {
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  /* Fonts from site.json (theme.fonts) via app/fonts.generated.ts; the second part is the fallback. */
-  --font-display: var(--font-display-face, Arial, sans-serif);
-  --font-sans: var(--font-text-face, Arial, sans-serif);
+:root {
+  --font-primary: Arial, sans-serif;
+  --font-heading: Arial, sans-serif;
+
+  /* AdSphere theme */
+  /* Brand */
+  --color-primary: #6e0c12;
+
+  /* Text */
+  --color-heading: #141414;
+  --color-text: #3f3f3f;
+  --color-text-muted: #5a5a5a;
+  --color-text-placeholder: #7a7a7a;
+  --color-white: #ffffff;
+
+  /* Backgrounds and borders */
+  --color-bg-main: #ffffff;
+  --color-bg-alt: #f7f5f5;
+  --color-bg-dark: #141414;
+  --color-bg-backdrop: #f5f5f5;
+  --color-border: #ebe4e4;
+
+  /* Overlays */
+  --color-primary-70: rgba(110, 12, 18, 0.7);
+  --color-hero-overlay: rgba(20, 20, 20, 0.8);
+  --color-hero-overlay-mid: rgba(20, 20, 20, 0.85);
+  --color-hero-overlay-end: rgba(20, 20, 20, 0.2);
+  --color-viewer-button: rgba(20, 20, 20, 0.7);
+  --color-black-85: rgba(0, 0, 0, 0.85);
+  --color-white-8: rgba(255, 255, 255, 0.08);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-60: rgba(255, 255, 255, 0.6);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-85: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-bg-backdrop);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }

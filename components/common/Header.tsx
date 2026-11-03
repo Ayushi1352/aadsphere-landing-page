@@ -3,17 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { site, type AdSphereHeaderData, type SectionProps } from "@/data";
-import Icon from "@/components/Icon";
+import type { GlobalUIData, HeaderData } from "@/types/templates.types";
+import { Icon } from "@/components/ui/Icon";
 
 /** id of the landing page section a link points to ("#about" → "about") */
 const sectionId = (href: string) => href.replace(/^#/, "");
 
 /** Look of the header "Get a Quote" button */
-const ctaClass = "inline-flex items-center justify-center rounded-lg border border-brand bg-brand font-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand";
+const ctaClass =
+  "inline-flex items-center justify-center rounded-lg border border-[var(--color-primary)] bg-[var(--color-primary)] font-display text-sm font-bold text-[var(--color-white)] transition-colors hover:bg-[var(--color-white)] hover:text-[var(--color-primary)]";
 
 /** Keeps track of the section in the middle of the screen, so its link is shown as the current one */
-function useActiveSection(ids: string[]) {
+const useActiveSection = (ids: string[]) => {
   const [active, setActive] = useState(ids[0]);
 
   useEffect(() => {
@@ -31,13 +32,16 @@ function useActiveSection(ids: string[]) {
   }, [ids]);
 
   return active;
-}
+};
 
-export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHeaderData>) {
-  const { brand, navigation: links, cta, labels } = data;
+type HeaderProps = {
+  data?: HeaderData;
+  ui: GlobalUIData;
+};
+
+export const Header = ({ data, ui }: HeaderProps) => {
+  const links = data?.navigation ?? [];
   const [ids] = useState(() => links.map((link) => sectionId(link.href)));
-  // the "Get a Quote" button already leads to the contact section, so its link is left out of both menus
-  const menuLinks = links.filter((link) => link.href !== cta.href);
   const active = useActiveSection(ids);
   const [open, setOpen] = useState(false);
 
@@ -47,6 +51,11 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  if (!data) return null;
+  const { brand, cta } = data;
+  // the "Get a Quote" button already leads to the contact section, so its link is left out of both menus
+  const menuLinks = links.filter((link) => link.href !== cta.href);
 
   /** The logo scrolls back to the top and drops any "#section" from the address bar, without reloading the page */
   const goHome = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -58,13 +67,13 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 mx-auto max-w-[1920px] border-b border-line bg-page">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <Link href="/" onClick={goHome} aria-label={labels.home} className="shrink-0">
-          <Image src={brand.logo.src} alt={brand.logo.alt} width={brand.logo.width} height={brand.logo.height} preload sizes="200px" className="h-auto w-34 lg:w-40" />
+    <header className="fixed inset-x-0 top-0 z-40 mx-auto max-w-[1920px] border-b border-[var(--color-border)] bg-[var(--color-bg-main)]">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+        <Link href="/" onClick={goHome} aria-label={ui.backToTop} className="shrink-0">
+          <Image src={brand.logo.src} alt={brand.logo.alt} width={brand.logo.width} height={brand.logo.height} preload sizes="200px" className="h-auto w-[8.5rem] lg:w-40" />
         </Link>
 
-        <nav aria-label={labels.mainNav} className="hidden items-center gap-8 lg:flex">
+        <nav aria-label={ui.mainNav} className="hidden items-center gap-8 lg:flex">
           {menuLinks.map((link) => {
             const current = sectionId(link.href) === active;
             return (
@@ -72,7 +81,7 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
                 key={link.href}
                 href={link.href}
                 aria-current={current ? "location" : undefined}
-                className={`font-display text-sm font-semibold whitespace-nowrap transition-colors hover:text-brand ${current ? "text-brand" : "text-ink"}`}
+                className={`whitespace-nowrap font-display text-sm font-semibold transition-colors hover:text-[var(--color-primary)] ${current ? "text-[var(--color-primary)]" : "text-[var(--color-heading)]"}`}
               >
                 {link.label}
               </a>
@@ -81,7 +90,7 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={cta.href} className={`${ctaClass} px-5 py-3 whitespace-nowrap max-sm:hidden`}>
+          <a href={cta.href} className={`${ctaClass} whitespace-nowrap px-5 py-3 max-sm:hidden`}>
             {cta.label}
           </a>
           <button
@@ -89,19 +98,19 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? labels.closeMenu : labels.openMenu}
-            className="grid size-11 place-items-center rounded-lg border border-line text-ink lg:hidden"
+            aria-label={open ? ui.closeMenu : ui.openMenu}
+            className="grid size-11 place-items-center rounded-lg border border-[var(--color-border)] text-[var(--color-heading)] lg:hidden"
           >
-            <Icon name={open ? "x" : "menu"} className="size-6" />
+            <Icon name={open ? "FiX" : "FiMenu"} className="size-6" />
           </button>
         </div>
       </div>
 
       <nav
         id="mobile-menu"
-        aria-label={labels.mobileNav}
+        aria-label={ui.mobileNav}
         // when open it fills the screen below the header, so the page behind it does not show through
-        className={`overflow-y-auto bg-page transition-[height,opacity] duration-300 lg:hidden ${
+        className={`overflow-y-auto bg-[var(--color-bg-main)] transition-[height,opacity] duration-300 lg:hidden ${
           open ? "h-[calc(100dvh-4.5rem)] opacity-100" : "pointer-events-none invisible h-0 opacity-0"
         }`}
       >
@@ -111,7 +120,7 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`block border-b border-line py-3.5 font-display font-semibold transition-colors hover:text-brand ${sectionId(link.href) === active ? "text-brand" : "text-ink"}`}
+                className={`block border-b border-[var(--color-border)] py-3.5 font-display font-semibold transition-colors hover:text-[var(--color-primary)] ${sectionId(link.href) === active ? "text-[var(--color-primary)]" : "text-[var(--color-heading)]"}`}
               >
                 {link.label}
               </a>
@@ -126,4 +135,4 @@ export default function Navbar({ data = site.navbar }: SectionProps<AdSphereHead
       </nav>
     </header>
   );
-}
+};

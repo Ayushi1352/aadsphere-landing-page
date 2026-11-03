@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
  * Counts a figure such as "30k+" or "98%" up from zero the first time it is seen.
  * The server renders the final value, so it reads correctly without JavaScript.
  */
-export default function CountUp({ value, duration = 1600 }: { value: string; duration?: number }) {
+export const CountUp = ({ value, duration = 1600 }: { value: string; duration?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ export default function CountUp({ value, duration = 1600 }: { value: string; dur
   }, [value, duration]);
 
   return <span ref={ref}>{value}</span>;
-}
+};

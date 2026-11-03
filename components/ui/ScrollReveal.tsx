@@ -10,7 +10,7 @@ import { useEffect } from "react";
  * Elements are hidden by a paused animation, never by a style attribute, so an element that React has
  * not hydrated yet never differs from its server HTML.
  */
-export default function ScrollReveal() {
+export const ScrollReveal = () => {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -55,4 +55,4 @@ export default function ScrollReveal() {
   }, []);
 
   return null;
-}
+};
